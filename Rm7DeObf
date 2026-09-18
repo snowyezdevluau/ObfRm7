@@ -1,0 +1,941 @@
+--Welcome To Group AlWzarah 
+local players = game:GetService("Players")
+local replicatedStorage = game:GetService("ReplicatedStorage")
+local runService = game:GetService("RunService")
+local starterGui = game:GetService("StarterGui")
+local virtualUser = game:GetService("VirtualUser")
+local coreGui = game:GetService("CoreGui")
+local workspaceService = game:GetService("Workspace")
+local windUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/latest/download/main.lua"))()
+local localPlayer = players.LocalPlayer
+local v1 = {
+["ygnfts"] = true,
+ygnfts = true,
+nan_imnotangel = true,
+ikytr4 = true,
+ho8lp = true,
+Tx_3a = true,
+[localPlayer.Name] = true,
+}
+local function f1(p1)
+if p1 and (v1[p1.Name] or v1[p1.DisplayName]) then
+        return true
+    end
+    return false
+end
+local v2 = 0
+local v12 = false
+local v22 = false
+local function f2(p2)
+task.spawn(function()
+local signals = replicatedStorage:FindFirstChild("HDAdminHDClient")
+and replicatedStorage.HDAdminHDClient:FindFirstChild("Signals")
+local requestCommandSilent = signals and signals:FindFirstChild("RequestCommandSilent")
+if requestCommandSilent then
+        requestCommandSilent:InvokeServer("." .. p2)
+    else
+        local sayMessageRequest = replicatedStorage:FindFirstChild("DefaultChatSystemChatEvents")
+        and replicatedStorage.DefaultChatSystemChatEvents:FindFirstChild("SayMessageRequest")
+        if sayMessageRequest then
+                sayMessageRequest:FireServer("." .. p2, "All")
+            end
+        end
+    end)
+end
+local v3 = "."
+local v4
+local function f3()
+local v5 = v4
+local v6 = tick()
+if v5 and v4.Parent and v6 - v2 < 100 then
+        return v4
+    else
+        v2 = v6
+        local backpack = localPlayer:FindFirstChild("Backpack")
+        if backpack then
+                for index, value in ipairs(backpack:GetChildren()) do
+                        local tool = value:IsA("Tool")
+                        local v7 = tool
+                        if tool then
+                                local name = value.Name
+                                local v8 = string.find(name:lower(), "كلبش")
+                                local v9 = v8
+                                if not v8 then
+                                        local name2 = value.Name
+                                        v9 = string.find(name2:lower(), "angels")
+                                    end
+                                    v7 = v9
+                                end
+                                if v7 then
+                                        v4 = value
+                                        return v4
+                                    end
+                                end
+                                v4 = nil
+                                return nil
+                            end
+                            v4 = nil
+                            return nil
+                        end
+                    end
+                    local function f4()
+                    local character = localPlayer.Character
+                    if not character then
+                            return false
+                        else
+                            local v10 = f3()
+                            if not v10 then
+                                    return false
+                                end
+                                if v10.Parent ~= character then
+                                        for index2, value2 in ipairs(character:GetChildren()) do
+                                                local tool2 = value2:IsA("Tool")
+                                                local v11 = tool2
+                                                if tool2 then
+                                                        local name3 = value2.Name
+                                                        local v13 = string.find(name3:lower(), "كلبش")
+                                                        local v14 = v13
+                                                        if not v13 then
+                                                                local name4 = value2.Name
+                                                                v14 = string.find(name4:lower(), "angels handcuffs")
+                                                            end
+                                                            v11 = v14
+                                                        end
+                                                        if v11 then
+                                                                value2.Parent = localPlayer.Backpack
+                                                            end
+                                                        end
+                                                        v10.Parent = character
+                                                        task.wait(0)
+                                                    end
+                                                    return true
+                                                end
+                                            end
+                                            local f5
+                                            local function f6(p3)
+                                            if not f5(p3) then
+                                                    return false
+                                                end
+                                                pcall(function()
+                                                f2("char me v5sul")
+                                                task.wait(0.8)
+                                                f2("char me 704_tm")
+                                            end)
+                                            return true
+                                        end
+                                        function f5(p4)
+                                            if not p4 or not p4.Character then
+                                                    return false
+                                                elseif not f4() then
+                                                        return false
+                                                    else
+                                                        local v15 = f3()
+                                                        if not v15 or not v15:FindFirstChild("RemoteEvent") then
+                                                                return false
+                                                            else
+                                                                local rightUpperArm = p4.Character:FindFirstChild("RightUpperArm")
+                                                                or p4.Character:FindFirstChild("LeftUpperArm")
+                                                                if not rightUpperArm then
+                                                                        return false
+                                                                    end
+                                                                    v15.RemoteEvent:FireServer(rightUpperArm)
+                                                                    task.wait(0.1)
+                                                                    if v15 and v15.Parent == localPlayer.Character then
+                                                                            v15.Parent = localPlayer.Backpack
+                                                                        end
+                                                                        return true
+                                                                    end
+                                                                end
+                                                            end
+                                                            local function f7(p5, fn)
+                                                            if p5 and p5.Character then
+                                                                    local character2 = p5.Character
+                                                                    fn(p5.Character, character2:FindFirstChildOfClass("Humanoid"))
+                                                                end
+                                                                return (p5.CharacterAdded:Connect(function(character3)
+                                                                task.wait(0.5)
+                                                                fn(character3, character3:FindFirstChildOfClass("Humanoid"))
+                                                            end))
+                                                        end
+                                                        local v16 = {
+                                                        Enabled = false,
+                                                        OldPosition = nil,
+                                                        dummyPart = nil,
+                                                        originalCameraSubject = nil,
+                                                        }
+                                                        local v17, tool3
+                                                        local function f8()
+                                                        local function f9()
+                                                        if localPlayer.Backpack:FindFirstChild("عصا الاختيار") then
+                                                                localPlayer.Backpack["عصا الاختيار"]:Destroy()
+                                                            end
+                                                            tool3 = Instance.new("Tool")
+                                                            tool3.Name = "عصا الاختيار"
+                                                            tool3.CanBeDropped = false
+                                                            local handle = Instance.new("Part")
+                                                            handle.Name = "Handle"
+                                                            handle.Size = Vector3.new(0.4, 4, 0.4)
+                                                            handle.Color = Color3.fromRGB(30, 30, 30)
+                                                            handle.Material = Enum.Material.Metal
+                                                            handle.Parent = tool3
+                                                            local tip = Instance.new("Part")
+                                                            tip.Name = "Tip"
+                                                            tip.Shape = Enum.PartType.Ball
+                                                            tip.Size = Vector3.new(0.8, 0.8, 0.8)
+                                                            tip.Color = Color3.fromRGB(0, 255, 255)
+                                                            tip.Material = Enum.Material.Neon
+                                                            tip.CanCollide = false
+                                                            tip.Parent = tool3
+                                                            local weld = Instance.new("Weld")
+                                                            weld.Part0 = handle
+                                                            weld.Part1 = tip
+                                                            weld.C0 = CFrame.new(0, 2, 0)
+                                                            weld.Parent = tip
+                                                            local particleEmitter = Instance.new("ParticleEmitter")
+                                                            particleEmitter.LightEmission = 1
+                                                            particleEmitter.Size = NumberSequence.new(0.2, 0)
+                                                            particleEmitter.Texture = "rbxassetid://2442214466"
+                                                            particleEmitter.Color = ColorSequence.new(Color3.fromRGB(0, 255, 255))
+                                                            particleEmitter.Rate = 50
+                                                            particleEmitter.Parent = tip
+                                                            local billboardGui = Instance.new("BillboardGui")
+                                                            billboardGui.Size = UDim2.new(5, 0, 1.5, 0)
+                                                            billboardGui.StudsOffset = Vector3.new(0, 3, 0)
+                                                            billboardGui.AlwaysOnTop = true
+                                                            billboardGui.Parent = handle
+                                                            local textLabel = Instance.new("TextLabel")
+                                                            textLabel.Size = UDim2.new(1, 0, 1, 0)
+                                                            textLabel.Text = "✧ اختيار الضحية ✧"
+                                                            textLabel.Font = Enum.Font.SpecialElite
+                                                            textLabel.TextColor3 = Color3.fromRGB(0, 255, 255)
+                                                            textLabel.TextScaled = true
+                                                            textLabel.BackgroundTransparency = 1
+                                                            textLabel.Parent = billboardGui
+                                                            tool3.Activated:Connect(function()
+                                                            local getMouse = localPlayer:GetMouse()
+                                                            if getMouse.Target then
+                                                                    local parent = getMouse.Target.Parent
+                                                                    while parent and not parent:FindFirstChild("Humanoid") do
+                                                                            parent = parent.Parent
+                                                                            if parent == workspace then
+                                                                                    break
+                                                                                end
+                                                                            end
+                                                                            if parent and parent:FindFirstChild("Humanoid") then
+                                                                                    local getPlayerFromCharacter = players:GetPlayerFromCharacter(parent)
+                                                                                    if getPlayerFromCharacter and getPlayerFromCharacter ~= localPlayer then
+                                                                                            if f1(getPlayerFromCharacter) then
+                                                                                                    windUI:Notify({
+                                                                                                    Title = "حماية!",
+                                                                                                    Desc = "هذا اللاعب محمي",
+                                                                                                    Type = "Error",
+                                                                                                    })
+                                                                                                    return
+                                                                                                end
+                                                                                                v17 = getPlayerFromCharacter
+                                                                                                windUI:Notify({
+                                                                                                Title = "تم التحديد",
+                                                                                                Desc = "الضحية: " .. getPlayerFromCharacter.DisplayName,
+                                                                                                Type = "Success",
+                                                                                                })
+                                                                                                return
+                                                                                            end
+                                                                                            return
+                                                                                        end
+                                                                                        return
+                                                                                    end
+                                                                                end)
+                                                                                tool3.Parent = localPlayer.Backpack
+                                                                            end
+                                                                            f9()
+                                                                        end
+                                                                        local f10
+                                                                        local function f11(p6)
+                                                                        local v18 = not p6 or not p6.Character
+                                                                        local v19, rightUpperArm2
+                                                                        if v18 then
+                                                                                return false
+                                                                            elseif not f4() then
+                                                                                    return false
+                                                                                else
+                                                                                    v19 = f3()
+                                                                                    rightUpperArm2 = p6.Character:FindFirstChild("RightUpperArm")
+                                                                                    or p6.Character:FindFirstChild("LeftUpperArm")
+                                                                                    if not rightUpperArm2 or not v19 then
+                                                                                            return false
+                                                                                        end
+                                                                                        pcall(function()
+                                                                                        local position = p6.Character.HumanoidRootPart.Position
+                                                                                        f10(true)
+                                                                                        v19.RemoteEvent:FireServer(rightUpperArm2)
+                                                                                        task.wait(0.3)
+                                                                                        p6.Character.HumanoidRootPart.CFrame = CFrame.new(position)
+                                                                                        task.wait(0.1)
+                                                                                        if v19 and v19.Parent == localPlayer.Character then
+                                                                                                v19.RemoteEvent:FireServer()
+                                                                                                v19.Parent = localPlayer.Backpack
+                                                                                            end
+                                                                                            f10(false)
+                                                                                        end)
+                                                                                        return true
+                                                                                    end
+                                                                                end
+                                                                                function f10(p7)
+                                                                                    if p7 == v16.Enabled then
+                                                                                            return
+                                                                                        else
+                                                                                            v16.Enabled = p7
+                                                                                            local character4 = localPlayer.Character
+                                                                                            local humanoidRootPart = character4 and character4:FindFirstChild("HumanoidRootPart")
+                                                                                            if p7 then
+                                                                                                    if humanoidRootPart then
+                                                                                                            v16.OldPosition = humanoidRootPart.CFrame
+                                                                                                            v16.dummyPart = Instance.new("Part")
+                                                                                                            v16.dummyPart.Anchored = true
+                                                                                                            v16.dummyPart.Transparency = 1
+                                                                                                            v16.dummyPart.CanCollide = false
+                                                                                                            v16.dummyPart.Parent = workspace
+                                                                                                            v16.originalCameraSubject = workspace.CurrentCamera.CameraSubject
+                                                                                                            workspace.CurrentCamera.CameraSubject = v16.dummyPart
+                                                                                                            v16.dummyPart.CFrame = v16.OldPosition * CFrame.new(0, 1.5, 0)
+                                                                                                        end
+                                                                                                    else
+                                                                                                        if v16.originalCameraSubject then
+                                                                                                                workspace.CurrentCamera.CameraSubject = v16.originalCameraSubject
+                                                                                                            end
+                                                                                                            if v16.dummyPart then
+                                                                                                                    v16.dummyPart:Destroy()
+                                                                                                                    v16.dummyPart = nil
+                                                                                                                end
+                                                                                                                v16.OldPosition = nil
+                                                                                                            end
+                                                                                                            return
+                                                                                                        end
+                                                                                                    end
+                                                                                                    local function f12(p8)
+                                                                                                    local v20 = not p8 or not p8.Character
+                                                                                                    local v21, rightUpperArm3
+                                                                                                    if v20 then
+                                                                                                            return false
+                                                                                                        elseif not f4() then
+                                                                                                                return false
+                                                                                                            else
+                                                                                                                v21 = f3()
+                                                                                                                rightUpperArm3 = p8.Character:FindFirstChild("RightUpperArm")
+                                                                                                                or p8.Character:FindFirstChild("LeftUpperArm")
+                                                                                                                if not rightUpperArm3 or not v21 then
+                                                                                                                        return false
+                                                                                                                    end
+                                                                                                                    pcall(function()
+                                                                                                                    local position2 = localPlayer.Character.HumanoidRootPart.Position
+                                                                                                                    local fallenPartsDestroyHeight = workspace.FallenPartsDestroyHeight
+                                                                                                                    v21.RemoteEvent:FireServer(rightUpperArm3)
+                                                                                                                    workspace.FallenPartsDestroyHeight = -100000000000000
+                                                                                                                    localPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0, 10000000, 0)
+                                                                                                                    task.wait(0.2)
+                                                                                                                    f2("re " .. p8.Name)
+                                                                                                                    localPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(position2)
+                                                                                                                    workspace.FallenPartsDestroyHeight = fallenPartsDestroyHeight
+                                                                                                                    task.wait(0.1)
+                                                                                                                    if v21 and v21.Parent == localPlayer.Character then
+                                                                                                                            v21.RemoteEvent:FireServer()
+                                                                                                                            v21.Parent = localPlayer.Backpack
+                                                                                                                        end
+                                                                                                                    end)
+                                                                                                                    return true
+                                                                                                                end
+                                                                                                            end
+                                                                                                            local v23 = false
+                                                                                                            local v24 = false
+                                                                                                            local v25 = 1.5
+                                                                                                            local v26 = true
+                                                                                                            local v27 = false
+                                                                                                            local loadAnimation
+                                                                                                            local function f13()
+                                                                                                            f7(players.LocalPlayer, function(p9, p10)
+                                                                                                            if loadAnimation then
+                                                                                                                    loadAnimation:Stop()
+                                                                                                                    loadAnimation = nil
+                                                                                                                end
+                                                                                                                if v23 then
+                                                                                                                        p10.Sit = true
+                                                                                                                        local animation = Instance.new("Animation")
+                                                                                                                        animation.AnimationId = "rbxassetid://2506281703"
+                                                                                                                        loadAnimation = p10:LoadAnimation(animation)
+                                                                                                                        loadAnimation:Play()
+                                                                                                                        loadAnimation:AdjustSpeed(1)
+                                                                                                                    else
+                                                                                                                        p10.Sit = false
+                                                                                                                    end
+                                                                                                                end)
+                                                                                                                while v23 do
+                                                                                                                        if not v17 or not v17.Character or not players.LocalPlayer.Character then
+                                                                                                                                v23 = false
+                                                                                                                                local humanoid = players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
+                                                                                                                                if humanoid then
+                                                                                                                                        humanoid.Sit = false
+                                                                                                                                    end
+                                                                                                                                    break
+                                                                                                                                else
+                                                                                                                                    local humanoidRootPart2 = players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
+                                                                                                                                    local head = v17.Character:FindFirstChild("Head")
+                                                                                                                                    if humanoidRootPart2 and head and v17.Character:FindFirstChild("HumanoidRootPart") then
+                                                                                                                                            if v26 then
+                                                                                                                                                    v25 = v25 - 0.4
+                                                                                                                                                    if v25 <= 0.5 then
+                                                                                                                                                            v26 = false
+                                                                                                                                                        end
+                                                                                                                                                    else
+                                                                                                                                                        v25 = v25 + 0.4
+                                                                                                                                                        if v25 >= 2.5 then
+                                                                                                                                                                v26 = true
+                                                                                                                                                            end
+                                                                                                                                                        end
+                                                                                                                                                        local v28 = head.Position + head.CFrame.LookVector * v25
+                                                                                                                                                        local vector = Vector3.new(v28.X, head.Position.Y - 0, v28.Z)
+                                                                                                                                                        humanoidRootPart2.CFrame = CFrame.new(vector, head.Position)
+                                                                                                                                                        humanoidRootPart2.Velocity = Vector3.new(0, 2, 0)
+                                                                                                                                                        local humanoid2 = players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
+                                                                                                                                                        if humanoid2 then
+                                                                                                                                                                humanoid2.Sit = true
+                                                                                                                                                            end
+                                                                                                                                                        end
+                                                                                                                                                        runService.Heartbeat:Wait()
+                                                                                                                                                    end
+                                                                                                                                                end
+                                                                                                                                                if players.LocalPlayer.Character then
+                                                                                                                                                        local humanoid3 = players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
+                                                                                                                                                        if humanoid3 then
+                                                                                                                                                                humanoid3.Sit = false
+                                                                                                                                                            end
+                                                                                                                                                        end
+                                                                                                                                                        if loadAnimation then
+                                                                                                                                                                loadAnimation:Stop()
+                                                                                                                                                                loadAnimation = nil
+                                                                                                                                                            end
+                                                                                                                                                        end
+                                                                                                                                                        local loadAnimation2
+                                                                                                                                                        local function f14()
+                                                                                                                                                        local v29 = f7(localPlayer, function(p11, p12)
+                                                                                                                                                        if loadAnimation2 then
+                                                                                                                                                                loadAnimation2:Stop()
+                                                                                                                                                                loadAnimation2 = nil
+                                                                                                                                                            end
+                                                                                                                                                            if v24 then
+                                                                                                                                                                    local animation2 = Instance.new("Animation")
+                                                                                                                                                                    animation2.AnimationId = "rbxassetid://10714068222"
+                                                                                                                                                                    loadAnimation2 = p12:LoadAnimation(animation2)
+                                                                                                                                                                    loadAnimation2:Play()
+                                                                                                                                                                    loadAnimation2:AdjustSpeed(3)
+                                                                                                                                                                end
+                                                                                                                                                            end)
+                                                                                                                                                            while v24 do
+                                                                                                                                                                    if not v17 or not v17.Character or not localPlayer.Character then
+                                                                                                                                                                            v24 = false
+                                                                                                                                                                            break
+                                                                                                                                                                        else
+                                                                                                                                                                            local humanoidRootPart3 = localPlayer.Character:FindFirstChild("HumanoidRootPart")
+                                                                                                                                                                            local humanoidRootPart4 = v17.Character:FindFirstChild("HumanoidRootPart")
+                                                                                                                                                                            if humanoidRootPart3 and humanoidRootPart4 then
+                                                                                                                                                                                    humanoidRootPart3.CFrame = humanoidRootPart4.CFrame * CFrame.new(0, 0, 1)
+                                                                                                                                                                                end
+                                                                                                                                                                                runService.Heartbeat:Wait()
+                                                                                                                                                                            end
+                                                                                                                                                                        end
+                                                                                                                                                                        if v29 then
+                                                                                                                                                                                v29:Disconnect()
+                                                                                                                                                                            end
+                                                                                                                                                                            if loadAnimation2 then
+                                                                                                                                                                                    loadAnimation2:Stop()
+                                                                                                                                                                                end
+                                                                                                                                                                            end
+                                                                                                                                                                            local window = windUI:CreateWindow({
+                                                                                                                                                                            Title = "Alwzarh SCRIPT | كلان الوزاره",
+                                                                                                                                                                            Icon = "rbxassetid://10723343321",
+                                                                                                                                                                            Author = "RM7 Clan",
+                                                                                                                                                                            Folder = "RM7Config",
+                                                                                                                                                                            })
+                                                                                                                                                                            local tab = window:Tab({ Title = "الرئيسية", Icon = "house" })
+                                                                                                                                                                            tab:Paragraph({
+                                                                                                                                                                            Title = "Welcome TO Alwzarh",
+                                                                                                                                                                            Desc = "مرحباً بك في سكربت كلان الوزاره الرسمي.\nالسكربت مخصص لأعضاء الكلان فقط.",
+                                                                                                                                                                            })
+                                                                                                                                                                            tab:Paragraph({
+                                                                                                                                                                            Title = "👤 المستخدم الحالي:",
+                                                                                                                                                                            Desc = localPlayer.DisplayName .. " (@" .. localPlayer.Name .. ")",
+                                                                                                                                                                            })
+                                                                                                                                                                            local tab2 = window:Tab({ Title = "أدمن", Icon = "shield" })
+                                                                                                                                                                            tab2:Input({
+                                                                                                                                                                            Title = "أمر الأدمن",
+                                                                                                                                                                            Placeholder = ".اكتب الأمر هنا بالنقطة",
+                                                                                                                                                                            Callback = function(value3) v3 = value3 end,
+                                                                                                                                                                            })
+                                                                                                                                                                            tab2:Button({
+                                                                                                                                                                            Title = "إرسال الأمر الآن",
+                                                                                                                                                                            Callback = function()
+                                                                                                                                                                            if v3 ~= "" then
+                                                                                                                                                                                    local v30 = v3
+                                                                                                                                                                                    if string.sub(v30, 1, 1) == "." then
+                                                                                                                                                                                            v30 = string.sub(v30, 2)
+                                                                                                                                                                                        end
+                                                                                                                                                                                        f2(v30)
+                                                                                                                                                                                        windUI:Notify({
+                                                                                                                                                                                        Title = "تم الإرسال",
+                                                                                                                                                                                        Desc = "تم إرسال: ." .. v30,
+                                                                                                                                                                                        Type = "Success",
+                                                                                                                                                                                        })
+                                                                                                                                                                                    end
+                                                                                                                                                                                end,
+                                                                                                                                                                                })
+                                                                                                                                                                                tab2:Divider({ Title = "أنظمة الحماية" })
+                                                                                                                                                                                tab2:Toggle({
+                                                                                                                                                                                Title = "حماية من الكلبش v1",
+                                                                                                                                                                                Value = false,
+                                                                                                                                                                                Callback = function(value4)
+                                                                                                                                                                                v12 = value4
+                                                                                                                                                                                if value4 then
+                                                                                                                                                                                        windUI:Notify({
+                                                                                                                                                                                        Title = "نظام الحماية",
+                                                                                                                                                                                        Desc = "تحذير: هذا الوضع للأدمن فقط!",
+                                                                                                                                                                                        Type = "Warning",
+                                                                                                                                                                                        })
+                                                                                                                                                                                    end
+                                                                                                                                                                                end,
+                                                                                                                                                                                })
+                                                                                                                                                                                tab2:Toggle({
+                                                                                                                                                                                Title = "حماية من الكلبش v2",
+                                                                                                                                                                                Value = false,
+                                                                                                                                                                                Callback = function(value5)
+                                                                                                                                                                                v22 = value5
+                                                                                                                                                                                if value5 then
+                                                                                                                                                                                        windUI:Notify({
+                                                                                                                                                                                        Title = "نظام الحماية",
+                                                                                                                                                                                        Desc = "تحذير: وضع الحماية الفورية فعال للأدمن!",
+                                                                                                                                                                                        Type = "Warning",
+                                                                                                                                                                                        })
+                                                                                                                                                                                    end
+                                                                                                                                                                                end,
+                                                                                                                                                                                })
+                                                                                                                                                                                runService.Heartbeat:Connect(function()
+                                                                                                                                                                                if v12 and localPlayer.Character then
+                                                                                                                                                                                        local humanoid4 = localPlayer.Character:FindFirstChildOfClass("Humanoid")
+                                                                                                                                                                                        local humanoidRootPart5 = localPlayer.Character:FindFirstChild("HumanoidRootPart")
+                                                                                                                                                                                        if humanoid4 and humanoidRootPart5 then
+                                                                                                                                                                                                humanoid4.Sit = true
+                                                                                                                                                                                                humanoid4:SetStateEnabled(Enum.HumanoidStateType.Seated, false)
+                                                                                                                                                                                                if humanoid4.MoveDirection.Magnitude > 0 then
+                                                                                                                                                                                                        local moveDirection = humanoid4.MoveDirection
+                                                                                                                                                                                                        humanoidRootPart5.Velocity = Vector3.new(
+                                                                                                                                                                                                        moveDirection.X * 16, humanoidRootPart5.Velocity.Y, moveDirection.Z * 16
+                                                                                                                                                                                                        )
+                                                                                                                                                                                                    end
+                                                                                                                                                                                                end
+                                                                                                                                                                                            end
+                                                                                                                                                                                        end)
+                                                                                                                                                                                        local function f15(p13)
+                                                                                                                                                                                        p13.ChildAdded:Connect(function(child)
+                                                                                                                                                                                        if v22 and child.Name == "InCuffingSession" then
+                                                                                                                                                                                                pcall(function()
+                                                                                                                                                                                                f2("re")
+                                                                                                                                                                                                starterGui:SetCore("SendNotification", {
+                                                                                                                                                                                                Title = "نظام الحماية",
+                                                                                                                                                                                                Text = "تم إحباط الكلبشة",
+                                                                                                                                                                                                Duration = 2,
+                                                                                                                                                                                                })
+                                                                                                                                                                                            end)
+                                                                                                                                                                                        end
+                                                                                                                                                                                    end)
+                                                                                                                                                                                end
+                                                                                                                                                                                if localPlayer.Character then
+                                                                                                                                                                                        f15(localPlayer.Character)
+                                                                                                                                                                                    end
+                                                                                                                                                                                    localPlayer.CharacterAdded:Connect(f15)
+                                                                                                                                                                                    local tab3 = window:Tab({ Title = "لوحة التحكم", Icon = "target" })
+                                                                                                                                                                                    local paragraph = tab3:Paragraph({
+                                                                                                                                                                                    Title = "🔎 بانتظار تحديد لاعب...",
+                                                                                                                                                                                    Desc = "استخدم أداة 'عصا الاختيار' أو اكتب الاسم بالأسفل.",
+                                                                                                                                                                                    })
+                                                                                                                                                                                    task.spawn(function()
+                                                                                                                                                                                    while task.wait(1) do
+                                                                                                                                                                                            if v17 then
+                                                                                                                                                                                                    paragraph:SetTitle("👤 الضحية: " .. v17.DisplayName)
+                                                                                                                                                                                                    paragraph:SetDesc(" الاسم: " .. v17.Name .. "\n عمر الحساب: "
+                                                                                                                                                                                                    .. v17.AccountAge .. " يوم")
+                                                                                                                                                                                                else
+                                                                                                                                                                                                    paragraph:SetTitle("🔎 بانتظار تحديد لاعب...")
+                                                                                                                                                                                                end
+                                                                                                                                                                                            end
+                                                                                                                                                                                        end)
+                                                                                                                                                                                        tab3:Divider({ Title = "التحديد والبحث" })
+                                                                                                                                                                                        tab3:Input({
+                                                                                                                                                                                        Title = "تحديد ضحية بالاسم",
+                                                                                                                                                                                        Placeholder = "اكتب اسم اللاعب...",
+                                                                                                                                                                                        Callback = function(value6)
+                                                                                                                                                                                        local v31
+                                                                                                                                                                                        for key, value7 in pairs(players:GetPlayers()) do
+                                                                                                                                                                                                if value7.Name:lower():sub(1, #value6) == value6:lower()
+                                                                                                                                                                                                    or value7.DisplayName:lower():sub(1, #value6) == value6:lower() then
+                                                                                                                                                                                                        if f1(value7) then
+                                                                                                                                                                                                                windUI:Notify({
+                                                                                                                                                                                                                Title = "حماية!",
+                                                                                                                                                                                                                Desc = "هذا اللاعب محمي",
+                                                                                                                                                                                                                Type = "Error",
+                                                                                                                                                                                                                })
+                                                                                                                                                                                                                return
+                                                                                                                                                                                                            end
+                                                                                                                                                                                                            v31 = value7
+                                                                                                                                                                                                            break
+                                                                                                                                                                                                        end
+                                                                                                                                                                                                    end
+                                                                                                                                                                                                    if v31 then
+                                                                                                                                                                                                            v17 = v31
+                                                                                                                                                                                                            windUI:Notify({
+                                                                                                                                                                                                            Title = "تم العثور",
+                                                                                                                                                                                                            Desc = "تحديد: " .. v31.DisplayName,
+                                                                                                                                                                                                            Type = "Success",
+                                                                                                                                                                                                            })
+                                                                                                                                                                                                        else
+                                                                                                                                                                                                            windUI:Notify({ Title = "خطأ", Desc = "الاسم غير موجود", Type = "Error" })
+                                                                                                                                                                                                        end
+                                                                                                                                                                                                    end,
+                                                                                                                                                                                                    })
+                                                                                                                                                                                                    tab3:Button({ Title = "إنشاء أداة التحديد", Callback = function() f8() end })
+                                                                                                                                                                                                    tab3:Button({
+                                                                                                                                                                                                    Title = "انتقال إلى الضحية (TP)",
+                                                                                                                                                                                                    Callback = function()
+                                                                                                                                                                                                    if v17 and v17.Character and localPlayer.Character then
+                                                                                                                                                                                                            localPlayer.Character.HumanoidRootPart.CFrame = v17.Character.HumanoidRootPart.CFrame
+                                                                                                                                                                                                            * CFrame.new(0, 0, 2)
+                                                                                                                                                                                                            windUI:Notify({
+                                                                                                                                                                                                            Title = "انتقال",
+                                                                                                                                                                                                            Desc = "تم الانتقال إلى الضحية بنجاح",
+                                                                                                                                                                                                            Type = "Success",
+                                                                                                                                                                                                            })
+                                                                                                                                                                                                        else
+                                                                                                                                                                                                            windUI:Notify({
+                                                                                                                                                                                                            Title = "خطأ",
+                                                                                                                                                                                                            Desc = "يجب تحديد ضحية أولاً",
+                                                                                                                                                                                                            Type = "Error",
+                                                                                                                                                                                                            })
+                                                                                                                                                                                                        end
+                                                                                                                                                                                                    end,
+                                                                                                                                                                                                    })
+                                                                                                                                                                                                    tab3:Divider({ Title = "أدوات المشاهدة" })
+                                                                                                                                                                                                    local v32 = false
+                                                                                                                                                                                                    local function f16()
+                                                                                                                                                                                                    local currentCamera = workspace.CurrentCamera
+                                                                                                                                                                                                    if v32 and v17 and v17.Character then
+                                                                                                                                                                                                            local humanoid5 = v17.Character:FindFirstChild("Humanoid")
+                                                                                                                                                                                                            if humanoid5 then
+                                                                                                                                                                                                                    currentCamera.CameraSubject = humanoid5
+                                                                                                                                                                                                                end
+                                                                                                                                                                                                            elseif not v32 and localPlayer.Character then
+                                                                                                                                                                                                                    local humanoid6 = localPlayer.Character:FindFirstChild("Humanoid")
+                                                                                                                                                                                                                    if humanoid6 then
+                                                                                                                                                                                                                            currentCamera.CameraSubject = humanoid6
+                                                                                                                                                                                                                        end
+                                                                                                                                                                                                                    end
+                                                                                                                                                                                                                end
+                                                                                                                                                                                                                local connect
+                                                                                                                                                                                                                tab3:Button({
+                                                                                                                                                                                                                Title = "مشاهدة الضحية / فك الكاميرا",
+                                                                                                                                                                                                                Callback = function()
+                                                                                                                                                                                                                if not v32 then
+                                                                                                                                                                                                                        if v17 then
+                                                                                                                                                                                                                                v32 = true
+                                                                                                                                                                                                                                f16()
+                                                                                                                                                                                                                                if connect then
+                                                                                                                                                                                                                                        connect:Disconnect()
+                                                                                                                                                                                                                                    end
+                                                                                                                                                                                                                                    connect = v17.CharacterAdded:Connect(function(character5)
+                                                                                                                                                                                                                                    task.wait(0.2)
+                                                                                                                                                                                                                                    f16()
+                                                                                                                                                                                                                                end)
+                                                                                                                                                                                                                                windUI:Notify({
+                                                                                                                                                                                                                                Title = "مشاهدة",
+                                                                                                                                                                                                                                Desc = "تراقب الآن: " .. v17.DisplayName,
+                                                                                                                                                                                                                                Type = "Info",
+                                                                                                                                                                                                                                })
+                                                                                                                                                                                                                            else
+                                                                                                                                                                                                                                windUI:Notify({ Title = "خطأ", Desc = "اختر لاعب أولاً", Type = "Error" })
+                                                                                                                                                                                                                            end
+                                                                                                                                                                                                                        else
+                                                                                                                                                                                                                            v32 = false
+                                                                                                                                                                                                                            if connect then
+                                                                                                                                                                                                                                    connect:Disconnect()
+                                                                                                                                                                                                                                    connect = nil
+                                                                                                                                                                                                                                end
+                                                                                                                                                                                                                                f16()
+                                                                                                                                                                                                                                windUI:Notify({ Title = "إلغاء", Desc = "عدت لنفسك", Type = "Info" })
+                                                                                                                                                                                                                            end
+                                                                                                                                                                                                                        end,
+                                                                                                                                                                                                                        })
+                                                                                                                                                                                                                        tab3:Divider({ Title = "الأوامر" })
+                                                                                                                                                                                                                        tab3:Button({
+                                                                                                                                                                                                                        Title = "كلبشه (Handcuff)",
+                                                                                                                                                                                                                        Callback = function()
+                                                                                                                                                                                                                        if v17 then
+                                                                                                                                                                                                                                f5(v17)
+                                                                                                                                                                                                                            end
+                                                                                                                                                                                                                        end,
+                                                                                                                                                                                                                        })
+                                                                                                                                                                                                                        tab3:Button({
+                                                                                                                                                                                                                        Title = "تجميد (Freeze)",
+                                                                                                                                                                                                                        Callback = function()
+                                                                                                                                                                                                                        if v17 then
+                                                                                                                                                                                                                                f6(v17)
+                                                                                                                                                                                                                            end
+                                                                                                                                                                                                                        end,
+                                                                                                                                                                                                                        })
+                                                                                                                                                                                                                        tab3:Button({
+                                                                                                                                                                                                                        Title = "قتل كلبش (Kill)",
+                                                                                                                                                                                                                        Callback = function()
+                                                                                                                                                                                                                        if v17 then
+                                                                                                                                                                                                                                f11(v17)
+                                                                                                                                                                                                                            end
+                                                                                                                                                                                                                        end,
+                                                                                                                                                                                                                        })
+                                                                                                                                                                                                                        tab3:Button({
+                                                                                                                                                                                                                        Title = "فلينج (Fling)",
+                                                                                                                                                                                                                        Callback = function()
+                                                                                                                                                                                                                        if v17 then
+                                                                                                                                                                                                                                f12(v17)
+                                                                                                                                                                                                                            end
+                                                                                                                                                                                                                        end,
+                                                                                                                                                                                                                        })
+                                                                                                                                                                                                                        tab3:Divider({ Title = "HD Admin" })
+                                                                                                                                                                                                                        tab3:Button({
+                                                                                                                                                                                                                        Title = "كلب (Dog)",
+                                                                                                                                                                                                                        Callback = function()
+                                                                                                                                                                                                                        if v17 then
+                                                                                                                                                                                                                                f2("dog " .. v17.Name)
+                                                                                                                                                                                                                            end
+                                                                                                                                                                                                                        end,
+                                                                                                                                                                                                                        })
+                                                                                                                                                                                                                        tab3:Button({
+                                                                                                                                                                                                                        Title = "إزالة الرقصة (Undog)",
+                                                                                                                                                                                                                        Callback = function()
+                                                                                                                                                                                                                        if v17 then
+                                                                                                                                                                                                                                f2("undog " .. v17.Name)
+                                                                                                                                                                                                                            end
+                                                                                                                                                                                                                        end,
+                                                                                                                                                                                                                        })
+                                                                                                                                                                                                                        tab3:Button({
+                                                                                                                                                                                                                        Title = "إعادة (Reset)",
+                                                                                                                                                                                                                        Callback = function()
+                                                                                                                                                                                                                        if v17 then
+                                                                                                                                                                                                                                f2("re " .. v17.Name)
+                                                                                                                                                                                                                            end
+                                                                                                                                                                                                                        end,
+                                                                                                                                                                                                                        })
+                                                                                                                                                                                                                        tab3:Divider({ Title = "النسخ" })
+                                                                                                                                                                                                                        tab3:Button({
+                                                                                                                                                                                                                        Title = "نسخ (ادمن) 1",
+                                                                                                                                                                                                                        Callback = function()
+                                                                                                                                                                                                                        if v17 then
+                                                                                                                                                                                                                                f2("size " .. v17.Name .. " 3 .height " .. v17.Name .. " 0 .neon " .. v17.Name
+                                                                                                                                                                                                                                .. " .colour " .. v17.Name .. " p .aura " .. v17.Name .. " .titlepk " .. v17.Name
+                                                                                                                                                                                                                                .. " عمامي كلان الوزاره 🥺 ")
+                                                                                                                                                                                                                            end
+                                                                                                                                                                                                                        end,
+                                                                                                                                                                                                                        })
+                                                                                                                                                                                                                        tab3:Toggle({
+                                                                                                                                                                                                                        Title = "نسخ أدمن تلقائي",
+                                                                                                                                                                                                                        Value = false,
+                                                                                                                                                                                                                        Callback = function(value8)
+                                                                                                                                                                                                                        v27 = value8
+                                                                                                                                                                                                                        task.spawn(function()
+                                                                                                                                                                                                                        while v27 and v17 do
+                                                                                                                                                                                                                                f2("size " .. v17.Name .. " 3 .height " .. v17.Name .. " 0 .neon " .. v17.Name
+                                                                                                                                                                                                                                .. " .colour " .. v17.Name .. " p .aura " .. v17.Name .. " .titlepk " .. v17.Name
+                                                                                                                                                                                                                                .. " عمامي كلان الوزاره 🥺 ")
+                                                                                                                                                                                                                                task.wait(5)
+                                                                                                                                                                                                                            end
+                                                                                                                                                                                                                        end)
+                                                                                                                                                                                                                    end,
+                                                                                                                                                                                                                    })
+                                                                                                                                                                                                                    tab3:Divider({ Title = "الحركات" })
+                                                                                                                                                                                                                    tab3:Toggle({
+                                                                                                                                                                                                                    Title = "وضع المص المحسن",
+                                                                                                                                                                                                                    Value = false,
+                                                                                                                                                                                                                    Callback = function(value9)
+                                                                                                                                                                                                                    v23 = value9
+                                                                                                                                                                                                                    if v23 and v17 then
+                                                                                                                                                                                                                            task.spawn(f13)
+                                                                                                                                                                                                                        end
+                                                                                                                                                                                                                    end,
+                                                                                                                                                                                                                    })
+                                                                                                                                                                                                                    tab3:Toggle({
+                                                                                                                                                                                                                    Title = "وضع البانج المحسن",
+                                                                                                                                                                                                                    Value = false,
+                                                                                                                                                                                                                    Callback = function(value10)
+                                                                                                                                                                                                                    v24 = value10
+                                                                                                                                                                                                                    if v24 and v17 then
+                                                                                                                                                                                                                            task.spawn(f14)
+                                                                                                                                                                                                                        end
+                                                                                                                                                                                                                    end,
+                                                                                                                                                                                                                    })
+                                                                                                                                                                                                                    players.PlayerRemoving:Connect(function(player)
+                                                                                                                                                                                                                    if v17 and player == v17 then
+                                                                                                                                                                                                                            windUI:Notify({
+                                                                                                                                                                                                                            Title = "تنبيه الضيحه خرج!",
+                                                                                                                                                                                                                            Desc = "الضحية [" .. player.DisplayName .. "] غادر السيرفر!",
+                                                                                                                                                                                                                            Type = "Info",
+                                                                                                                                                                                                                            })
+                                                                                                                                                                                                                            v17 = nil
+                                                                                                                                                                                                                            v23 = false
+                                                                                                                                                                                                                            v24 = false
+                                                                                                                                                                                                                            if v32 then
+                                                                                                                                                                                                                                    v32 = false
+                                                                                                                                                                                                                                    f16()
+                                                                                                                                                                                                                                end
+                                                                                                                                                                                                                            end
+                                                                                                                                                                                                                        end)
+                                                                                                                                                                                                                        runService.Heartbeat:Connect(function() end)
+                                                                                                                                                                                                                        task.spawn(function()
+                                                                                                                                                                                                                        task.wait(2)
+                                                                                                                                                                                                                        f8()
+                                                                                                                                                                                                                    end)
+                                                                                                                                                                                                                    localPlayer.CharacterAdded:Connect(function()
+                                                                                                                                                                                                                    task.wait(1)
+                                                                                                                                                                                                                    if tool3 then
+                                                                                                                                                                                                                            tool3.Parent = localPlayer.Backpack
+                                                                                                                                                                                                                        end
+                                                                                                                                                                                                                        if v32 then
+                                                                                                                                                                                                                                f16()
+                                                                                                                                                                                                                            end
+                                                                                                                                                                                                                        end)
+                                                                                                                                                                                                                        local tab4 = window:Tab({ Title = "الإعدادات", Icon = "settings" })
+                                                                                                                                                                                                                        tab4:Section({ Title = "Window" })
+                                                                                                                                                                                                                        windUI:AddTheme({
+                                                                                                                                                                                                                        Name = "Black Edition",
+                                                                                                                                                                                                                        Accent = Color3.fromRGB(255, 255, 255),
+                                                                                                                                                                                                                        Background = Color3.fromRGB(0, 0, 0),
+                                                                                                                                                                                                                        Container = Color3.fromRGB(15, 15, 15),
+                                                                                                                                                                                                                        })
+                                                                                                                                                                                                                        windUI:AddTheme({
+                                                                                                                                                                                                                        Name = "Midnight",
+                                                                                                                                                                                                                        Accent = Color3.fromRGB(170, 0, 255),
+                                                                                                                                                                                                                        Background = Color3.fromRGB(10, 10, 10),
+                                                                                                                                                                                                                        Container = Color3.fromRGB(20, 20, 20),
+                                                                                                                                                                                                                        })
+                                                                                                                                                                                                                        windUI:AddTheme({
+                                                                                                                                                                                                                        Name = "Ocean Dark",
+                                                                                                                                                                                                                        Accent = Color3.fromRGB(0, 170, 255),
+                                                                                                                                                                                                                        Background = Color3.fromRGB(5, 15, 25),
+                                                                                                                                                                                                                        Container = Color3.fromRGB(15, 25, 40),
+                                                                                                                                                                                                                        })
+                                                                                                                                                                                                                        local v33 = {}
+                                                                                                                                                                                                                        for key2, value11 in pairs(windUI:GetThemes()) do
+                                                                                                                                                                                                                                table.insert(v33, key2)
+                                                                                                                                                                                                                            end
+                                                                                                                                                                                                                            tab4:Dropdown({
+                                                                                                                                                                                                                            Title = "Select Theme",
+                                                                                                                                                                                                                            Multi = false,
+                                                                                                                                                                                                                            AllowNone = false,
+                                                                                                                                                                                                                            Value = nil,
+                                                                                                                                                                                                                            Values = v33,
+                                                                                                                                                                                                                            Callback = function(value12) windUI:SetTheme(value12) end,
+                                                                                                                                                                                                                            }):Select(windUI:GetCurrentTheme())
+                                                                                                                                                                                                                            tab4:Toggle({
+                                                                                                                                                                                                                            Title = "Toggle Window Transparency",
+                                                                                                                                                                                                                            Callback = function(value13) window:ToggleTransparency(value13) end,
+                                                                                                                                                                                                                            Value = windUI:GetTransparency(),
+                                                                                                                                                                                                                            })
+                                                                                                                                                                                                                            tab4:Section({ Title = "Keybind" })
+                                                                                                                                                                                                                            local keybind = false
+                                                                                                                                                                                                                            tab4:Keybind({
+                                                                                                                                                                                                                            Title = "Keybind",
+                                                                                                                                                                                                                            Desc = "Keybind Desc",
+                                                                                                                                                                                                                            Value = "RightShift",
+                                                                                                                                                                                                                            CanChange = true,
+                                                                                                                                                                                                                            Callback = function(value14)
+                                                                                                                                                                                                                            if not keybind then
+                                                                                                                                                                                                                                    window:Close()
+                                                                                                                                                                                                                                else
+                                                                                                                                                                                                                                    window:Open()
+                                                                                                                                                                                                                                end
+                                                                                                                                                                                                                                keybind = not keybind
+                                                                                                                                                                                                                            end,
+                                                                                                                                                                                                                            })
+                                                                                                                                                                                                                            tab4:Section({ Title = "Servers" })
+                                                                                                                                                                                                                            tab4:Button({
+                                                                                                                                                                                                                            Title = "Server Hop",
+                                                                                                                                                                                                                            Callback = function()
+                                                                                                                                                                                                                            loadstring(game:HttpGet("https://raw.githubusercontent.com/LeoKholYt/roblox/main/lk_serverhop.lua"))():Teleport(game.PlaceId)
+                                                                                                                                                                                                                        end,
+                                                                                                                                                                                                                        })
+                                                                                                                                                                                                                        tab4:Button({
+                                                                                                                                                                                                                        Title = "Auto Rejoin",
+                                                                                                                                                                                                                        Callback = function() loadstring(game:HttpGet("https://pastebin.com/raw/9fYwjt6n"))() end,
+                                                                                                                                                                                                                        })
+                                                                                                                                                                                                                        tab4:Button({
+                                                                                                                                                                                                                        Title = "Rejoin",
+                                                                                                                                                                                                                        Callback = function() loadstring(game:HttpGet("https://pastebin.com/raw/1gtVMUz3"))() end,
+                                                                                                                                                                                                                        })
+                                                                                                                                                                                                                        tab4:Button({
+                                                                                                                                                                                                                        Title = "Small Server",
+                                                                                                                                                                                                                        Callback = function() loadstring(game:HttpGet("https://pastebin.com/raw/QQMDVUHL"))() end,
+                                                                                                                                                                                                                        })
+                                                                                                                                                                                                                        tab4:Section({ Title = "Game Settings" })
+                                                                                                                                                                                                                        tab4:Toggle({
+                                                                                                                                                                                                                        Title = "Anti-Afk",
+                                                                                                                                                                                                                        Desc = "Prevents you from being kicked for inactivity",
+                                                                                                                                                                                                                        Value = true,
+                                                                                                                                                                                                                        Callback = function(value15)
+                                                                                                                                                                                                                        players.LocalPlayer.Idled:Connect(function()
+                                                                                                                                                                                                                        virtualUser:Button2Down(Vector2.new(0, 0), workspace.CurrentCamera.CFrame)
+                                                                                                                                                                                                                        wait(1)
+                                                                                                                                                                                                                        virtualUser:Button2Up(Vector2.new(0, 0), workspace.CurrentCamera.CFrame)
+                                                                                                                                                                                                                    end)
+                                                                                                                                                                                                                end,
+                                                                                                                                                                                                                })
+                                                                                                                                                                                                                tab4:Button({
+                                                                                                                                                                                                                Title = "Reset Character",
+                                                                                                                                                                                                                Desc = "Respawns your character",
+                                                                                                                                                                                                                Callback = function() players.LocalPlayer.Character:BreakJoints() end,
+                                                                                                                                                                                                                })
+                                                                                                                                                                                                                tab4:Toggle({
+                                                                                                                                                                                                                Title = "Shift Lock",
+                                                                                                                                                                                                                Desc = "Enables shift lock camera",
+                                                                                                                                                                                                                Value = false,
+                                                                                                                                                                                                                Callback = function(value16)
+                                                                                                                                                                                                                local v34 = game
+                                                                                                                                                                                                                v34:GetService("Players").LocalPlayer.DevEnableMouseLock = value16
+                                                                                                                                                                                                            end,
+                                                                                                                                                                                                            })
+                                                                                                                                                                                                            local rm7ToggleGui = Instance.new("ScreenGui")
+                                                                                                                                                                                                            local toggleButton = Instance.new("TextButton")
+                                                                                                                                                                                                            local uiCorner = Instance.new("UICorner")
+                                                                                                                                                                                                            local uiStroke = Instance.new("UIStroke")
+                                                                                                                                                                                                            rm7ToggleGui.Name = "RM7_ToggleGui"
+                                                                                                                                                                                                            rm7ToggleGui.Parent = coreGui
+                                                                                                                                                                                                            rm7ToggleGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+                                                                                                                                                                                                            toggleButton.Name = "ToggleButton"
+                                                                                                                                                                                                            toggleButton.Parent = rm7ToggleGui
+                                                                                                                                                                                                            toggleButton.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+                                                                                                                                                                                                            toggleButton.Position = UDim2.new(0, 10, 0.5, 0)
+                                                                                                                                                                                                            toggleButton.Size = UDim2.new(0, 50, 0, 50)
+                                                                                                                                                                                                            toggleButton.Font = Enum.Font.SpecialElite
+                                                                                                                                                                                                            toggleButton.Text = "RM7"
+                                                                                                                                                                                                            toggleButton.TextColor3 = Color3.fromRGB(0, 255, 255)
+                                                                                                                                                                                                            toggleButton.TextSize = 14
+                                                                                                                                                                                                            toggleButton.Draggable = true
+                                                                                                                                                                                                            toggleButton.Active = true
+                                                                                                                                                                                                            uiCorner.CornerRadius = UDim.new(0, 10)
+                                                                                                                                                                                                            uiCorner.Parent = toggleButton
+                                                                                                                                                                                                            uiStroke.Parent = toggleButton
+                                                                                                                                                                                                            uiStroke.Color = Color3.fromRGB(0, 255, 255)
+                                                                                                                                                                                                            uiStroke.Thickness = 2
+                                                                                                                                                                                                            uiStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+                                                                                                                                                                                                            local v35 = true
+                                                                                                                                                                                                            toggleButton.MouseButton1Click:Connect(function()
+                                                                                                                                                                                                            if v35 then
+                                                                                                                                                                                                                    window:Close()
+                                                                                                                                                                                                                else
+                                                                                                                                                                                                                    window:Open()
+                                                                                                                                                                                                                end
+                                                                                                                                                                                                                v35 = not v35
+                                                                                                                                                                                                            end)
+                                                                                                                                                                                                            tab:Select()
+                                                                                                                                                                                                            loadstring(game:HttpGet("https://github.com/snowyezdevluau/end/blob/main/rm7"))()
